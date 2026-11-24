@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101010">
+  <meta name="description"
+    content="Descubre New Fight, escuela de kickboxing en Valladolid. Aprende desde cero, mejora tu técnica y reserva ya tu primer entrenamiento.">
+  <title>New Fight Valladolid | Escuela de kickboxing</title>
+  <style>
+    :root {
+      --bg: #101010;
+      --panel: #191919;
+      --red: #ed2635;
+      --white: #f7f7f5;
+      --muted: #b8b8b8;
+      --line: #333
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--white);
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      line-height: 1.55
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto
+    }
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 5;
+      border-bottom: 1px solid #ffffff20
+    }
+
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center
+    }
+
+    .brand-logo {
+      height: clamp(26px, 4vw, 34px);
+      width: auto;
+      display: block
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 28px;
+      color: #ddd;
+      font-size: 14px
+    }
+
+    .navlinks a:hover {
+      color: var(--red)
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--red);
+      color: white;
+      font-weight: 850;
+      padding: 15px 23px;
+      border: 0;
+      border-radius: 4px;
+      cursor: pointer;
+      letter-spacing: .2px;
+      transition: .2s
+    }
+
+    .btn:hover {
+      background: #ff4050;
+      transform: translateY(-2px)
+    }
+
+    .btn.outline {
+      background: transparent;
+      border: 1px solid #ffffff70
+    }
+
+    .btn.outline:hover {
+      border-color: var(--red);
+      background: #ed26351a
+    }
+
+    .hero {
+      min-height: 730px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 130px 0 80px;
+      background: radial-gradient(ellipse at 78% 43%, #632027 0, #301519 22%, transparent 53%), linear-gradient(115deg, #101010 42%, #1c1113)
+    }
+
+    .hero:after {
+      content: "";
+      position: absolute;
+      right: -8%;
+      top: 15%;
+      width: 55%;
+      height: 95%;
+      background: linear-gradient(140deg, transparent 28%, #ed26351c 28% 29%, transparent 29% 49%, #ffffff0d 49% 50%, transparent 50%);
+      transform: skewX(-12deg);
+      pointer-events: none
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 720px
+    }
+
+    .eyebrow {
+      color: #ff5965;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase
+    }
+
+    h1 {
+      font-size: clamp(48px, 7.2vw, 88px);
+      line-height: .98;
+      letter-spacing: -4px;
+      margin: 22px 0 24px;
+      font-weight: 950;
+      text-transform: uppercase
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--red)
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #d0d0d0;
+      max-width: 550px;
+      margin: 0 0 32px
+    }
+
+    .actions {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap
+    }
+
+    .hero-note {
+      margin-top: 34px;
+      color: #aaa;
+      font-size: 13px
+    }
+
+    .hero-note b {
+      color: white
+    }
+
+    .section {
+      padding: 90px 0
+    }
+
+    .section-head {
+      max-width: 650px;
+      margin-bottom: 42px
+    }
+
+    .section h2 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.04;
+      letter-spacing: -2px;
+      margin: 12px 0 16px;
+      text-transform: uppercase
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin: 0
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px
+    }
+
+    .benefit {
+      padding: 28px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      min-height: 190px
+    }
+
+    .number {
+      font-size: 13px;
+      color: var(--red);
+      font-weight: 900;
+      letter-spacing: 2px
+    }
+
+    .benefit h3 {
+      font-size: 21px;
+      margin: 18px 0 8px
+    }
+
+    .benefit p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center
+    }
+
+    .visual {
+      min-height: 410px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, #301316, #111 65%);
+      border: 1px solid #4a2428;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .visual:before,
+    .visual:after {
+      content: "";
+      position: absolute;
+      border: 1px solid #ed263550;
+      transform: rotate(-28deg)
+    }
+
+    .visual:before {
+      width: 330px;
+      height: 480px
+    }
+
+    .visual:after {
+      width: 240px;
+      height: 390px
+    }
+
+    .glove {
+      position: relative;
+      z-index: 1;
+      font-size: clamp(100px, 16vw, 180px);
+      filter: drop-shadow(0 15px 22px #0009)
+    }
+
+    .visual-label {
+      position: absolute;
+      bottom: 20px;
+      left: 22px;
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #ddd;
+      font-weight: 900
+    }
+
+    .points {
+      list-style: none;
+      padding: 0;
+      margin: 28px 0
+    }
+
+    .points li {
+      padding: 13px 0;
+      border-bottom: 1px solid var(--line);
+      color: #ddd
+    }
+
+    .points li:before {
+      content: "↗";
+      color: var(--red);
+      font-weight: 900;
+      margin-right: 12px
+    }
+
+    .booking {
+      background: #171717;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 55px;
+      align-items: start
+    }
+
+    .booking-copy p {
+      color: var(--muted)
+    }
+
+    .booking-copy .big {
+      font-size: 22px;
+      color: white;
+      font-weight: 750;
+      line-height: 1.3
+    }
+
+    form {
+      background: #101010;
+      border: 1px solid #383838;
+      padding: 30px;
+      border-radius: 6px
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px
+    }
+
+    .field.full {
+      grid-column: 1/-1
+    }
+
+    label {
+      font-size: 13px;
+      color: #ddd;
+      font-weight: 700
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      background: #1b1b1b;
+      color: white;
+      border: 1px solid #444;
+      padding: 13px 14px;
+      border-radius: 3px;
+      font: inherit
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 1px solid var(--red);
+      border-color: var(--red)
+    }
+
+    input::placeholder {
+      color: #888
+    }
+
+    select option {
+      background: #1b1b1b
+    }
+
+    .form-help {
+      font-size: 12px;
+      color: #999;
+      margin: 14px 0 18px
+    }
+
+    .form-submit {
+      width: 100%;
+      font-size: 16px
+    }
+
+    .notice {
+      font-size: 12px;
+      color: #aaa;
+      margin: 12px 0 0
+    }
+
+    .faq {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px
+    }
+
+    .faq article {
+      padding: 23px;
+      background: var(--panel);
+      border: 1px solid var(--line)
+    }
+
+    .faq h3 {
+      margin: 0 0 8px;
+      font-size: 18px
+    }
+
+    .faq p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px
+    }
+
+    footer {
+      padding: 38px 0;
+      color: #aaa;
+      font-size: 13px;
+      border-top: 1px solid #252525
+    }
+
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap
+    }
+
+    .foot strong {
+      color: white
+    }
+
+    .foot a:hover {
+      color: white
+    }
+
+    .social-zone {
+      display: flex;
+      flex-direction: column;
+      gap: 8px
+    }
+
+    .social-title {
+      color: white;
+      font-weight: 700;
+      font-size: 13px
+    }
+
+    .social-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: #ddd;
+      text-decoration: none;
+      transition: .2s;
+      font-size: 13px
+    }
+
+    .social-link:hover {
+      color: var(--red)
+    }
+
+    .social-link svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+      flex-shrink: 0
+    }
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #142318;
+      color: #ffffff;
+      border: 1.5px solid #25d366;
+      border-radius: 9999px;
+      padding: 10px 22px 10px 10px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all .25s ease;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, .18);
+      margin: 10px 0 16px;
+      width: fit-content;
+    }
+
+    .btn-whatsapp:hover {
+      background: #25d366;
+      color: #0d1e12;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(37, 211, 102, .4);
+    }
+
+    .btn-whatsapp__icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: #25d366;
+      border-radius: 50%;
+      flex-shrink: 0;
+      transition: all .25s ease;
+    }
+
+    .btn-whatsapp:hover .btn-whatsapp__icon {
+      background: #0d1e12;
+    }
+
+    .btn-whatsapp__icon svg {
+      width: 18px;
+      height: 18px;
+      fill: #ffffff;
+      transition: fill .25s ease;
+    }
+
+    .btn-whatsapp:hover .btn-whatsapp__icon svg {
+      fill: #25d366;
+    }
+
+    .btn-whatsapp--sm {
+      padding: 7px 16px 7px 8px;
+      font-size: 13px;
+      margin: 4px 0 8px;
+    }
+
+    .btn-whatsapp--sm .btn-whatsapp__icon {
+      width: 26px;
+      height: 26px;
+    }
+
+    .btn-whatsapp--sm .btn-whatsapp__icon svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    @media(max-width:760px) {
+      .nav {
+        height: 70px
+      }
+
+      .navlinks {
+        display: none
+      }
+
+      .nav .btn {
+        padding: 11px 13px;
+        font-size: 12px
+      }
+
+      .hero {
+        min-height: 680px
+      }
+
+      .hero:after {
+        width: 100%;
+        right: -40%
+      }
+
+      h1 {
+        letter-spacing: -2.5px
+      }
+
+      .section {
+        padding: 68px 0
+      }
+
+      .benefits {
+        grid-template-columns: 1fr
+      }
+
+      .split,
+      .booking-grid {
+        grid-template-columns: 1fr;
+        gap: 32px
+      }
+
+      .visual {
+        min-height: 300px
+      }
+
+      .faq {
+        grid-template-columns: 1fr
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr
+      }
+
+      .field.full {
+        grid-column: auto
+      }
+
+      .wrap {
+        width: min(100% - 32px, 1120px)
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#inicio" aria-label="New Fight, inicio"><img src="logo-new-fight.png"
+          srcset="logo-new-fight.png 1x, logo-new-fight@2x.png 2x" alt="New Fight" class="brand-logo" width="141"
+          height="28"></a>
+      <nav class="navlinks"><a href="#escuela">La escuela</a><a href="#entrenamiento">Entrenamiento</a><a
+          href="#preguntas">Preguntas</a></nav>
+      <a class="btn" href="#formulario">RESERVA TU ENTRENAMIENTO</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="wrap">
+        <div class="hero-inner">
+          <div class="eyebrow">Escuela de kickboxing · Valladolid</div>
+          <h1>Tu primer paso.<br><em>Tu nueva fuerza.</em></h1>
+          <p>¿Nunca has practicado kickboxing? Este es tu sitio. Aprende desde cero, mejora a tu ritmo y descubre todo
+            lo que eres capaz de hacer.</p>
+          <div class="actions"><a class="btn" href="#formulario">RESERVA YA TU PRIMER ENTRENAMIENTO →</a>
+          </div>
+          <div class="hero-note"><b>No necesitas experiencia previa.</b> Solo ganas de empezar.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="escuela">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Mucho más que entrenar</div>
+          <h2>Empieza donde estás.<br>Mejora cada día.</h2>
+          <p>En New Fight encontrarás una escuela en la que aprender técnica, ganar confianza y entrenar en un entorno
+            de respeto y compañerismo.</p>
+        </div>
+        <div class="benefits">
+          <article class="benefit">
+            <div class="number">01 / INICIACIÓN</div>
+            <h3>Aprende desde cero</h3>
+            <p>No importa tu experiencia ni tu forma física actual. Empieza paso a paso y aprende la técnica con
+              atención.</p>
+          </article>
+          <article class="benefit">
+            <div class="number">02 / PROGRESO</div>
+            <h3>Entrena a tu ritmo</h3>
+            <p>Trabaja coordinación, resistencia, fuerza y técnica mientras avanzas clase a clase.</p>
+          </article>
+          <article class="benefit">
+            <div class="number">03 / EQUIPO</div>
+            <h3>Buen ambiente</h3>
+            <p>Entrena con personas que comparten el respeto, la disciplina y las ganas de superarse.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="entrenamiento">
+      <div class="wrap split">
+        <div class="visual" aria-label="Diseño gráfico deportivo de New Fight">
+          <div class="glove">🥊</div>
+          <div class="visual-label">DISCIPLINA · TÉCNICA · ACTITUD</div>
+        </div>
+        <div>
+          <div class="eyebrow">La escuela New Fight</div>
+          <h2>Un lugar para sacar tu mejor versión.</h2>
+          <p style="color:var(--muted)">Tanto si vienes por primera vez como si ya tienes experiencia, aquí podrás
+            trabajar tus objetivos con una enseñanza cercana y clases enfocadas en mejorar.</p>
+          <ul class="points">
+            <li>Kickboxing para distintos niveles.</li>
+            <li>Trabajo técnico y preparación física.</li>
+            <li>Correcciones y seguimiento durante el aprendizaje.</li>
+            <li>Respeto y compañerismo dentro y fuera del tatami.</li>
+          </ul>
+          <a class="btn" href="#formulario">RESERVA YA TU PRIMER ENTRENAMIENTO →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section booking" id="formulario">
+      <div class="wrap booking-grid">
+        <div class="booking-copy">
+          <div class="eyebrow">Tu primer paso</div>
+          <h2>Reserva ya tu primer entrenamiento</h2>
+          <p class="big">Rellena tus datos y nos pondremos en contacto contigo.</p>
+          <p>Te confirmaremos el horario, grupo y resolveremos cualquier duda que tengas para empezar.</p>
+          <p><strong>New Fight</strong><br>C. Tahonas, 5 · 47003 Valladolid</p>
+          <p><a href="mailto:escuelanewfight@gmail.com">escuelanewfight@gmail.com</a></p>
+          <div>
+            <a class="btn-whatsapp"
+              href="https://wa.me/34656680144?text=Hola%2C%20quisiera%20reservar%20mi%20primer%20entrenamiento"
+              target="_blank" rel="noopener noreferrer" aria-label="Contáctanos por WhatsApp">
+              <span class="btn-whatsapp__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.4-.13-.57.13-.17.25-.66.81-.81.98-.15.17-.3.19-.55.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45s-.57-1.37-.78-1.88c-.2-.49-.41-.43-.57-.43h-.49c-.17 0-.45.06-.68.32-.23.25-.89.87-.89 2.12 0 1.25.91 2.46 1.04 2.63.13.17 1.8 2.74 4.36 3.84.61.26 1.09.42 1.46.54.61.2 1.17.17 1.61.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.3z" />
+                </svg>
+              </span>
+              <span>Contáctanos por WhatsApp</span>
+            </a>
+          </div>
+        </div>
+        <form id="bookingForm">
+          <div class="form-grid">
+            <div class="field"><label for="name">Nombre *</label><input id="name" name="name" placeholder="Tu nombre"
+                autocomplete="given-name" required></div>
+            <div class="field"><label for="phone">Teléfono / WhatsApp *</label><input id="phone" name="phone" type="tel"
+                placeholder="Tu teléfono" autocomplete="tel" required></div>
+            <div class="field"><label for="age">Edad</label><input id="age" name="age" type="number" min="5" max="99"
+                placeholder="Tu edad"></div>
+            <div class="field"><label for="level">Experiencia</label><select id="level" name="level">
+                <option value="Nunca he practicado">Nunca he practicado</option>
+                <option value="Soy principiante">He probado alguna vez</option>
+                <option value="Tengo experiencia">Tengo experiencia</option>
+              </select></div>
+            <div class="field full"><label for="time">Horario de interés</label><select id="time" name="time">
+                <option value="Me adapto">Me adapto a cualquier horario</option>
+                <option value="Mañana">Mañana</option>
+                <option value="Tarde">Tarde</option>
+              </select></div>
+            <div class="field full"><label for="message">¿Tienes alguna duda o consulta? (opcional)</label><textarea
+                id="message" name="message" rows="3" placeholder="Cuéntanos tus dudas o preferencias"></textarea></div>
+          </div>
+          <p class="form-help">Al pulsar el botón se abrirá WhatsApp con tus datos preparados para reservar tu
+            entrenamiento en New Fight.</p>
+          <button class="btn form-submit" type="submit">RESERVA YA TU PRIMER ENTRENAMIENTO →</button>
+          <p class="notice">* Campos obligatorios.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="preguntas">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Antes de venir</div>
+          <h2>¿Tienes dudas?</h2>
+          <p>Dar el primer paso es más fácil de lo que parece.</p>
+        </div>
+        <div class="faq">
+          <article>
+            <h3>¿Necesito experiencia?</h3>
+            <p>No. Puedes venir aunque nunca hayas practicado kickboxing. Te guiaremos desde cero.</p>
+          </article>
+          <article>
+            <h3>¿Tengo que estar en forma?</h3>
+            <p>No necesitas llegar en una forma física concreta. La idea es aprender y mejorar progresivamente.</p>
+          </article>
+          <article>
+            <h3>¿Cómo reservo mi entrenamiento?</h3>
+            <p>Rellena el formulario y escríbenos por WhatsApp. Te confirmaremos disponibilidad y resolveremos tus dudas
+              rápidamente.
+            </p>
+          </article>
+          <article>
+            <h3>¿Dónde está New Fight?</h3>
+            <p>En C. Tahonas, 5, 47003 Valladolid. Puedes llamarnos al 656 680 144 si necesitas indicaciones.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap foot">
+      <div><strong>NEW FIGHT</strong><br>Escuela de kickboxing · Valladolid</div>
+      <div>C. Tahonas, 5 · 47003 Valladolid<br><a href="mailto:escuelanewfight@gmail.com">escuelanewfight@gmail.com</a>
+      </div>
+      <div class="social-zone">
+        <div class="social-title">Redes y contacto</div>
+        <div class="social-list">
+          <a class="social-link" href="https://www.instagram.com/escuela_new_fight/?hl=fr" target="_blank"
+            rel="noopener noreferrer" aria-label="Instagram New Fight">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+            <span>@escuela_new_fight</span>
+          </a>
+          <a class="btn-whatsapp btn-whatsapp--sm"
+            href="https://wa.me/34656680144?text=Hola%2C%20quisiera%20reservar%20mi%20primer%20entrenamiento"
+            target="_blank" rel="noopener noreferrer" aria-label="Contáctanos por WhatsApp">
+            <span class="btn-whatsapp__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.4-.13-.57.13-.17.25-.66.81-.81.98-.15.17-.3.19-.55.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45s-.57-1.37-.78-1.88c-.2-.49-.41-.43-.57-.43h-.49c-.17 0-.45.06-.68.32-.23.25-.89.87-.89 2.12 0 1.25.91 2.46 1.04 2.63.13.17 1.8 2.74 4.36 3.84.61.26 1.09.42 1.46.54.61.2 1.17.17 1.61.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.3z" />
+              </svg>
+            </span>
+            <span>Contáctanos por WhatsApp</span>
+          </a>
+        </div>
+      </div>
+      <div>© <span id="year"></span> New Fight</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('bookingForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!this.reportValidity()) return;
+      const d = new FormData(this);
+      const lines = [
+        '¡Hola, New Fight! Quiero reservar mi primer entrenamiento de kickboxing.',
+        '',
+        'Nombre: ' + d.get('name'),
+        'Teléfono: ' + d.get('phone'),
+        'Edad: ' + (d.get('age') || 'No indicada'),
+        'Experiencia: ' + d.get('level'),
+        'Horario de preferencia: ' + d.get('time'),
+        'Consulta / Mensaje: ' + (d.get('message') || 'Quiero reservar mi primer entrenamiento')
+      ];
+      const url = 'https://wa.me/34656680144?text=' + encodeURIComponent(lines.join('\n'));
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
+  </script>
+</body>
+
+</html>
